@@ -52,7 +52,7 @@ def ricercaPiatto(piatto):
 
 ricercaPiatto("Antipasti")
 
-# 6 A)
+# 6A)
 def stampaPunteggioMax(dizionario, piatto, catChef):
     presenza = False
     max = 0
