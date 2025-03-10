@@ -52,7 +52,7 @@ def ricercaPiatto(piatto):
 
 ricercaPiatto("Antipasti")
 
-# 6)
+# 6 A)
 def stampaPunteggioMax(dizionario, piatto, catChef):
     presenza = False
     max = 0
@@ -77,6 +77,28 @@ def stampaPunteggioMax(dizionario, piatto, catChef):
         print("\nERRORE! valori inesistenti")
 
 stampaPunteggioMax(dizionario, "Piatti unici", "Junior Chef")
+
+# 6B)
+def stampaPunteggioMedio(dizionario, piatto, catChef):
+    presenza = False
+    media = 0
+    nChef = 0
+
+    for nome in dizionario.keys():
+        for categ, punteggi, chef in dizionario[nome]:
+            if(categ == piatto and chef == catChef):
+                punteggio = punteggi[0] + punteggi[1] + punteggi[2]
+                media += punteggio
+                nChef += 1
+                presenza = True
+
+    if(presenza):
+        mediatot = media/nChef
+        print(f"\nMedia punteggi: {mediatot}")
+    if(presenza == False):
+        print("\nERRORE! valori inesistenti")
+
+stampaPunteggioMedio(dizionario, "Primi", "Senior Chef")
 
 # 7)
 def inserisci_dati_nuovo_chef():
